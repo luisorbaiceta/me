@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<head>
+  <meta
+    name="description"
+    content="I'm an architect from Spain currently working at Orbaiceta & Aldaba Architects"
+  />
+</head>
+<Layout title="Luis Orbaiceta">
+  <main>
+    <p>
+      Hi there! My name is Luis. I'm an architect from Spain currently working
+      at
+      <br />
+      <a id="current-job" href="https://www.orbaiceta-aldaba.com/">
+        Orbaiceta & Aldaba Architects
+      </a>
+      <script>
+        const link = document.getElementById("current-job");
+
+        const leaveEffect = (e: MouseEvent) => {
+          e.preventDefault();
+
+          if (!link) {
+            throw new Error("Ups, there is no link 🤷‍♂️");
+          }
+
+          link.innerText = "See you next time!";
+          setTimeout(() => {
+            window.location.href = "https://www.orbaiceta-aldaba.com/";
+          }, 2000);
+        };
+
+        link?.addEventListener("click", leaveEffect);
+
+        window.onbeforeunload = () => {
+          link?.removeEventListener("click", leaveEffect);
+        };
+      </script>
+    </p>
+  </main>
+</Layout>
+
+<style is:global>
+  #current-job {
+    color: #ff1e00;
+  }
+  body {
+    overflow: hidden;
+  }
+  main {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+  }
+</style>
