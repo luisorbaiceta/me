@@ -2,13 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<head>
-  <meta
-    name="description"
-    content="I'm an architect from Spain currently working at Orbaiceta & Aldaba Architects"
-  />
-</head>
-<Layout title="Luis Orbaiceta">
+<Layout
+  title="Luis Orbaiceta"
+  description="I'm an architect from Spain currently working at Orbaiceta & Aldaba Architects"
+>
   <main>
     <p>
       Hi there! My name is Luis. I'm an architect from Spain currently working
@@ -45,7 +42,7 @@ import Layout from "../layouts/Layout.astro";
 
 <style is:global>
   #current-job {
-    color: #ff1e00;
+    color: red;
   }
   body {
     overflow: hidden;
